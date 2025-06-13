@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "CommonJS",
-    "rootDir": "./src",
-    "outDir": "./dist",
+    "target": "ES2020",                // 可調成 ES6, ES2022 依需要
+    "module": "commonjs",              // 使用 Node.js 常見的 CommonJS 模組
+    "moduleResolution": "node10",      // ✅ 避免 deprecated 警告
+    "esModuleInterop": true,           // ✅ 支援 import express from 'express'
+    "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "esModuleInterop": true
+    "skipLibCheck": true,
+    "outDir": "dist",                  // 編譯輸出資料夾
+    "rootDir": "src"                   // 原始碼資料夾
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
