@@ -3,6 +3,7 @@
 import express from 'express';
 import path from 'path';
 import dessertRouter from './routes/dessertRoute'
+import picRouter from './routes/dessertPicRoute'
 
 // 建立 app 實例
 const app = express();
@@ -28,7 +29,7 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use('/dessert', dessertRouter);
 // app.use('/dessert', shoppingCartRouter);
 // app.use('/dessert', promoteRoute);
-// app.use('/dessertPic', picRouter);
+app.use('/dessertPic', picRouter);
 // app.use('/', lineBotRoute);
 // app.use('/dessert', orderRoute);
 

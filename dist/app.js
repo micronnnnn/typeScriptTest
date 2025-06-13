@@ -7,6 +7,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
 const dessertRoute_1 = __importDefault(require("./routes/dessertRoute"));
+const dessertPicRoute_1 = __importDefault(require("./routes/dessertPicRoute"));
 // 建立 app 實例
 const app = (0, express_1.default)();
 // ✅ 使用 CommonJS 的 __dirname
@@ -27,7 +28,7 @@ app.use(express_1.default.urlencoded({ extended: true, limit: '10mb' }));
 app.use('/dessert', dessertRoute_1.default);
 // app.use('/dessert', shoppingCartRouter);
 // app.use('/dessert', promoteRoute);
-// app.use('/dessertPic', picRouter);
+app.use('/dessertPic', dessertPicRoute_1.default);
 // app.use('/', lineBotRoute);
 // app.use('/dessert', orderRoute);
 // 前端畫面路由
