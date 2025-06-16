@@ -13,7 +13,7 @@ interface DessertAttributes {
   dessert_instruction: string;
   dessert_total_score?: number | null;
   dessert_total_people?: number | null;
-  dessert_pic?: string | null;
+  dessert_pic?: Buffer | null;
 }
 
 // 新增時可選擇不帶 primary key，故要用 Optional
@@ -30,7 +30,7 @@ class Dessert extends Model<DessertAttributes, DessertCreationAttributes> implem
   public dessert_instruction!: string;
   public dessert_total_score!: number | null;
   public dessert_total_people!: number | null;
-  public dessert_pic!: string | null;
+  public dessert_pic!: Buffer | null;
 }
 
 // 定義 model
@@ -104,7 +104,7 @@ Dessert.init(
       field: 'TKT_TOTAL_PEOPLE',
     },
     dessert_pic: {
-      type: DataTypes.STRING,
+      type: DataTypes.BLOB,
       allowNull: true,
       field: 'DESSERT_IMG',
     },

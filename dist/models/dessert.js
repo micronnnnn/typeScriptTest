@@ -76,7 +76,7 @@ Dessert.init({
         field: 'TKT_TOTAL_PEOPLE',
     },
     dessert_pic: {
-        type: sequelize_1.DataTypes.STRING,
+        type: sequelize_1.DataTypes.BLOB,
         allowNull: true,
         field: 'DESSERT_IMG',
     },
